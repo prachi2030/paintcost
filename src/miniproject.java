@@ -14,17 +14,18 @@ import java.util.Scanner;
 
 //declaration of class
 class Painting {
-    int roomLength , roomWidth , roomHeight;
+    int roomLength , roomWidth , roomHeight , index;
     int choice,same,number = 1;
     Scanner input = new Scanner(System.in);
-    public void getInput(){         //method to get input from user
-        
-        System.out.println(" Enter the room details:\n ");
-        System.out.println(" Enter the length of the room:\n ");
+    public void getInput(){                              //method to get input from user
+        for(index=1;index<=10;index++) {                 //loop to take input again
+            
+        System.out.println(" Enter the room details: ");
+        System.out.println(" Enter the length of the room: ");
         roomLength = input.nextInt();
-        System.out.println(" Enter the width of the room:\n ");
+        System.out.println(" Enter the width of the room: ");
         roomWidth = input.nextInt();
-        System.out.println(" Enter the height of the room:\n ");
+        System.out.println(" Enter the height of the room: ");
         roomHeight = input.nextInt();
         
        // areaCalculator(roomLength,roomWidth,roomHeight);
@@ -32,24 +33,24 @@ class Painting {
        System.out.println(" Do you want to enter for more rooms?\n Press 1 for Yes or any other character for No\n ");
        choice = input.nextInt();
        if ( choice == 1 ) {
-           System.out.println(" If the dimensions of room is same press 1\n");
-           same = input.nextInt();
-           if ( same == 1 ) {
-               number++;
+           getInput();
            }
-           else {
-               getInput();
-           }
-           
+          
+       else {
+           break;
        }
+    }
+}
+    
+    public void areaCalculator(int roomLength,int roomWidth,int roomHeight){
+        
     }
     
 }
-/* public class miniproject {
 
+public class miniproject {
     public static void main(String[] args) {
-        
         Painting paint=new Painting();
         paint.getInput();
-    }
-} */
+}
+}
