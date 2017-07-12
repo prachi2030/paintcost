@@ -13,44 +13,12 @@ import java.util.Scanner;
  */
 
 //declaration of class
-<span class="fc" id="L16">class Painting {</span>
-    int roomLength , roomWidth , roomHeight;
-<span class="fc" id="L18">    int choice,same,number = 1;</span>
-<span class="fc" id="L19">    Scanner input = new Scanner(System.in);</span>
-    public void getInput(){         //method to get input from user
-        
-<span class="nc" id="L22">        System.out.println(&quot; Enter the room details:\n &quot;);</span>
-<span class="nc" id="L23">        System.out.println(&quot; Enter the length of the room:\n &quot;);</span>
-<span class="nc" id="L24">        roomLength = input.nextInt();</span>
-<span class="nc" id="L25">        System.out.println(&quot; Enter the width of the room:\n &quot;);</span>
-<span class="nc" id="L26">        roomWidth = input.nextInt();</span>
-<span class="nc" id="L27">        System.out.println(&quot; Enter the height of the room:\n &quot;);</span>
-<span class="nc" id="L28">        roomHeight = input.nextInt();</span>
-        
-       // areaCalculator(roomLength,roomWidth,roomHeight);
-       
-<span class="nc" id="L32">       System.out.println(&quot; Do you want to enter for more rooms?\n Press 1 for Yes or any other character for No\n &quot;);</span>
-<span class="nc" id="L33">       choice = input.nextInt();</span>
-<span class="nc bnc" id="L34" title="All 2 branches missed.">       if ( choice == 1 ) {</span>
-<span class="nc" id="L35">           System.out.println(&quot; If the dimensions of room is same press 1\n&quot;);</span>
-<span class="nc" id="L36">           same = input.nextInt();</span>
-<span class="nc bnc" id="L37" title="All 2 branches missed.">           if ( same == 1 ) {</span>
-<span class="nc" id="L38">               number++;</span>
-           }
-           else {
-<span class="nc" id="L41">               getInput();</span>
-           }
-           
-       }
-<span class="nc" id="L45">    }</span>
-    
-}
-<span class="nc" id="L48">public class miniproject {</span>
 
+<span class="nc" id="L17">public class miniproject {</span>
     public static void main(String[] args) {
-        
-<span class="nc" id="L52">        Painting paint=new Painting();</span>
-<span class="nc" id="L53">        paint.getInput();</span>
-<span class="nc" id="L54">    }</span>
-} 
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
+<span class="nc" id="L19">        painting paint=new painting();</span>
+<span class="nc" id="L20">        paint.getInput();</span>
+        //prachi
+<span class="nc" id="L22">}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

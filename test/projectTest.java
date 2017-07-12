@@ -31,6 +31,7 @@ public class projectTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -48,13 +49,31 @@ public class projectTest {
      }
       @Test
     public void calculateAreawalls(){
-        assertEquals(12,paint.calculateAreawalls(3,4),0.1);
+        assertEquals(84,paint.calculateAreawalls(3,4,6),0.1);
     }
     
     @Test
     public void calculateAreaceiling(){
         assertEquals(12,paint.calculateAreaceiling(3,4),0.1);
     }
+    
+    @Test
+    public void calculateAreadoor(){
+        paint.no_of_Doors = 4 ;
+        assertEquals(32,paint.calculateAreadoor(2,4),0.1);
+    }
+    
+    @Test
+    public void calculateAreawindow(){
+        paint.no_of_Windows = 4;
+        assertEquals(16,paint.calculateAreawindow(2,2),0.1);
+    }
+    
+    /* @Test
+    public void calculatetotalArea(){
+      
+        assertEquals(48,paint.calculatetotalArea(),0.1);
+    } */
     
     
     
