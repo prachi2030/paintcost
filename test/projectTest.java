@@ -50,4 +50,12 @@ public class projectTest {
     public void calculateAreawalls(){
         assertEquals(12,paint.calculateAreawalls(3,4),0.1);
     }
+    
+    @Test
+    public void calculateAreaceiling(){
+        assertEquals(12,paint.calculateAreaceiling(3,4),0.1);
+    }
+    
+    
+    
 }
