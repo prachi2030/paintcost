@@ -52,5 +52,6 @@ public class miniproject {
     public static void main(String[] args) {
         Painting paint=new Painting();
         paint.getInput();
+        //prachi
 }
 }
