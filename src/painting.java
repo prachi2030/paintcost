@@ -31,18 +31,18 @@ public class painting {
     int noRooms;
     int choice,same,number = 1;
     public int flag;
-    public double wallArea=0,ceilingArea=0,totalArea=0;
+    public double wallArea=0,ceilingArea=0,totalArea=0,qtyreqd=0,costpaint=0,totalCost=0;
     Scanner input = new Scanner(System.in);
     public int getInput(){                              //method to get input from user
         System.out.println(" Enter the number of rooms: ");
         noRooms = input.nextInt();
         for(index=1;index<=noRooms;index++) {                 //loop to take input again
             
-                System.out.println(" Enter the length of the room: ");
+                System.out.println(" Enter the length of"+index+" the room: ");
                 roomLength = input.nextInt();  
-                System.out.println(" Enter the height of the room: ");
+                System.out.println(" Enter the height of"+index+" the room: ");
                 roomHeight = input.nextInt();
-                System.out.println(" Enter the width of the room: ");
+                System.out.println(" Enter the width of"+index+" the room: ");
                 roomWidth = input.nextInt();
                 calculateAreawalls(roomLength,roomHeight);
                 calculateAreaceiling(roomLength,roomWidth);
@@ -85,6 +85,26 @@ public class painting {
    public double calculatetotalArea(){
        totalArea = wallArea + ceilingArea;
        return totalArea;
+   
+}
+   public double quantityPaint(){
+       calculatetotalArea();
+       qtyreqd = totalArea/100;     //100sqft requires 1litre of paint
+       return qtyreqd;
+   
+}
+   
+   public double costPaint(){
+       quantityPaint();
+        costpaint = qtyreqd * 250;   //1litre of paint cost Rs.250
+        return costpaint;
+   }
+   
+   
+   public double totalCost(){
+       costPaint();
+       totalCost = totalArea*50;     //labourcost = Rs.50 per sqft
+       return totalCost;
    }
 }
 
