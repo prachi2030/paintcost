@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  * @author BL01
  */
 public class projectTest {
-    Painting paint=new Painting();
+    painting paint=new painting();
     
     public projectTest() {
     }
@@ -46,4 +46,8 @@ public class projectTest {
      
      
      }
+      @Test
+    public void calculateAreawalls(){
+        assertEquals(12,paint.calculateAreawalls(3,4),0.1);
+    }
 }
