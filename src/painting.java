@@ -28,15 +28,22 @@ import java.util.Scanner;
 public class painting {
     
     int roomLength , roomWidth , roomHeight , index ;
-    int noRooms;
+    int no_of_Rooms , no_of_Doors , no_of_Windows;
     int choice,same,number = 1;
     public int flag;
+    int doorLength , doorWidth , windowLength , windowWidth;
     public double wallArea=0,ceilingArea=0,totalArea=0,qtyreqd=0,costpaint=0,totalCost=0;
+    public double doorArea , windowArea;
     Scanner input = new Scanner(System.in);
     public int getInput(){                              //method to get input from user
         System.out.println(" Enter the number of rooms: ");
-        noRooms = input.nextInt();
-        for(index=1;index<=noRooms;index++) {                 //loop to take input again
+        no_of_Rooms = input.nextInt();
+        System.out.println(" Enter the number of doors: ");
+        no_of_Doors = input.nextInt();
+        System.out.println(" Enter the number of windows: ");
+        no_of_Windows = input.nextInt();
+        
+        for(index=1;index<=no_of_Rooms;index++) {                 //loop to take input again
             
                 System.out.println(" Enter the length of"+index+" the room: ");
                 roomLength = input.nextInt();  
@@ -47,7 +54,17 @@ public class painting {
                 calculateAreawalls(roomLength,roomHeight);
                 calculateAreaceiling(roomLength,roomWidth);
             }
-            flag=1;
+        flag=1;
+            
+        System.out.println(" Enter the length of door: ");   
+        doorLength = input.nextInt();
+        System.out.println(" Enter the width of door: ");
+        doorWidth = input.nextInt();
+        
+        System.out.println(" Enter the length of window: ");
+        windowLength = input.nextInt();
+        System.out.println(" Enter the width of window: ");
+        windowWidth = input.nextInt();
             
        
           /*  System.out.println(" Do you want to enter for more rooms?\n Press 1 for Yes or any other character for No\n ");
@@ -82,8 +99,24 @@ public class painting {
         return ceilingArea;
     }
     
-   public double calculatetotalArea(){
-       totalArea = wallArea + ceilingArea;
+     public double calculateAreadoor(int doorLength, int doorWidth ){
+        
+        double tempdoor = doorLength * doorWidth;
+        doorArea = doorArea + tempdoor;
+        
+        return doorArea;
+    }
+     
+      public double calculateAreawindow(int windowLength, int windowWidth ){
+        
+        double tempwindow = windowLength * windowWidth;
+        windowArea = windowArea + tempwindow;
+        
+        return windowArea;
+    }
+    
+   public double calculatetotalArea() {
+       totalArea = ( wallArea + ceilingArea ) - ( doorArea + windowArea );
        return totalArea;
    
 }
