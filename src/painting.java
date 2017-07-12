@@ -81,6 +81,11 @@ public class painting {
         
         return ceilingArea;
     }
+    
+   public double calculatetotalArea(){
+       totalArea = wallArea + ceilingArea;
+       return totalArea;
+   }
 }
 
    
