@@ -69,7 +69,7 @@ public class projectTest {
         assertEquals(16,paint.calculateAreawindow(2,2),0.1);
     }
     
-    /* @Test
+    /*@Test
     public void calculatetotalArea(){
       
         assertEquals(48,paint.calculatetotalArea(),0.1);

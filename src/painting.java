@@ -14,7 +14,7 @@ public class painting {
     public int doorHeight, doorWidth, windowHeight, windowWidth;
     public int flag;
     
-    public double wallArea = 0, ceilingArea = 0, totalArea = 0, qtyReqd = 0, costPaint = 0, totalCost = 0;
+    public double wallArea = 0, ceilingArea = 0, totalArea = 0, qtyPaint = 0, costPaint = 0, totalCost = 0;
     public double doorArea, windowArea;
     public double cost, area;
     
@@ -72,9 +72,8 @@ public class painting {
             
         // considering rectangular rooms 
         
-        double temp1 = 2 * roomLength * roomHeight;                             // area of 2 longer walls
-        double temp2 = 2 * roomWidth * roomHeight;                              // area of the other 2 shorter walls 
-        wallArea = wallArea + temp1 + temp2;
+        double temp1 = 2 * ( roomLength + roomWidth) * roomHeight;                            // area of the other 2 shorter walls 
+        wallArea = wallArea + temp1 ;
         
         return wallArea;                                                  //returns the area of walls
     }
@@ -115,14 +114,14 @@ public class painting {
 
     public double quantityPaint() {
 
-        qtyReqd = totalArea / feet;     //100sqft requires 1litre of paint
-        return qtyReqd ;                //returns the quantity of paint
+        qtyPaint = totalArea / feet;     //100sqft requires 1litre of paint
+        return qtyPaint ;                //returns the quantity of paint
 
     }
 
     public double costPaint() {
 
-        costPaint = qtyReqd * cost_of_Paint ;   // assuming 1 litre of paint costs Rs.250
+        costPaint = qtyPaint * cost_of_Paint ;   // assuming 1 litre of paint costs Rs.250
         //printCost(costpaint);
         
         return costPaint;               //returns the cost of paint
