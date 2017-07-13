@@ -16,14 +16,8 @@ public class miniproject {
 
     public static void main(String[] args) {
         painting paint = new painting();
-        paint.getInputWalls();
-
-        paint.calculateAreadoor(paint.doorHeight, paint.doorWidth);
-        paint.calculateAreawindow(paint.windowHeight, paint.windowWidth);
-        paint.calculatetotalArea();
-        paint.quantityPaint();
-        paint.costPaint();
-        paint.totalCost();
-
+        paint.getInput();
+        
+        
     }
 }

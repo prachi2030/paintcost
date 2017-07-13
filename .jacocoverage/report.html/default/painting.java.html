@@ -1,153 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>painting.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;miniproject&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">painting.java</span></div><h1>painting.java</h1><pre class="source lang-java linenums">
 import java.util.Scanner;
 
-
 /**
- *Software for estimation of cost for painting 
+ * Software for estimation of cost for painting
+ *
  * @author Prachi,radhika,megha
  */
 <span class="fc" id="L9">public class painting {</span>
-   //Assuming all dimensions in square feet
-<span class="fc" id="L11">    public int roomLength, roomWidth, roomHeight, index = 1;</span>
+    //Assuming all dimensions in square feet
+
+<span class="fc" id="L12">    public int roomLength, roomWidth, roomHeight, index = 1;</span>
     public int no_of_Rooms, no_of_Doors, no_of_Windows;
-<span class="fc" id="L13">    public int choice, same, number = 1;</span>
+<span class="fc" id="L14">    public int choice, same, number = 1;</span>
     public int doorHeight, doorWidth, windowHeight, windowWidth;
     public int flag;
-    
-<span class="fc" id="L17">    public double wallArea = 0, ceilingArea = 0, totalArea = 0, qtyReqd = 0, costPaint = 0, totalCost = 0;</span>
+
+<span class="fc" id="L18">    public double wallArea = 0, ceilingArea = 0, totalArea = 0, qtyReqd = 0, costPaint = 0, totalCost = 0;</span>
     public double doorArea, windowArea;
     public double cost, area;
-    
-<span class="fc" id="L21">    double feet = 100;                                             // assuming 100 feet = 1 litre</span>
-<span class="fc" id="L22">    double cost_of_Paint = 250;                                    // assuming 1 litre of paint costs Rs.250</span>
-<span class="fc" id="L23">    double labourCharge = 50;                                       //assuming labourcost = Rs.50 per sqft</span>
-    
-<span class="fc" id="L25">    Scanner input = new Scanner(System.in);</span>
+
+<span class="fc" id="L22">    double feet = 100;                                             // assuming 100 feet = 1 litre</span>
+<span class="fc" id="L23">    double cost_of_Paint = 250;                                    // assuming 1 litre of paint costs Rs.250</span>
+<span class="fc" id="L24">    double labourCharge = 50;                                       //assuming labourcost = Rs.50 per sqft</span>
+
+<span class="fc" id="L26">    Scanner input = new Scanner(System.in);</span>
 
     public int getInput() {                                                  //method to get input from user
-        
-<span class="nc" id="L29">        System.out.println(&quot; Enter the number of rooms: &quot;);</span>
-<span class="nc" id="L30">        no_of_Rooms = input.nextInt();</span>
-<span class="nc" id="L31">        System.out.println(&quot; Enter the number of doors: &quot;);</span>
-<span class="nc" id="L32">        no_of_Doors = input.nextInt();</span>
-<span class="nc" id="L33">        System.out.println(&quot; Enter the number of windows: &quot;);</span>
-<span class="nc" id="L34">        no_of_Windows = input.nextInt();</span>
-<span class="nc" id="L35">        System.out.println(&quot; Enter the height of the room&quot;);</span>
-<span class="nc" id="L36">        roomHeight = input.nextInt();</span>
-        
-<span class="nc bnc" id="L38" title="All 2 branches missed.">        for (index = 1; index &lt;= no_of_Rooms; index++) {                     //loop to take input </span>
 
-<span class="nc" id="L40">            System.out.println(&quot; Enter the length of the room&quot; + index);</span>
-<span class="nc" id="L41">            roomLength = input.nextInt();</span>
+<span class="nc" id="L30">        System.out.println(&quot; Enter the number of rooms: &quot;);</span>
+<span class="nc" id="L31">        no_of_Rooms = input.nextInt();</span>
+<span class="nc" id="L32">        System.out.println(&quot; Enter the number of doors: &quot;);</span>
+<span class="nc" id="L33">        no_of_Doors = input.nextInt();</span>
+<span class="nc" id="L34">        System.out.println(&quot; Enter the number of windows: &quot;);</span>
+<span class="nc" id="L35">        no_of_Windows = input.nextInt();</span>
+<span class="nc" id="L36">        System.out.println(&quot; Enter the height of the room&quot;);</span>
+<span class="nc" id="L37">        roomHeight = input.nextInt();</span>
 
-<span class="nc" id="L43">            System.out.println(&quot; Enter the width of the room&quot; + index);</span>
-<span class="nc" id="L44">            roomWidth = input.nextInt();</span>
-<span class="nc" id="L45">            calculateAreawalls(roomLength, roomWidth, roomHeight);</span>
-<span class="nc" id="L46">            calculateAreaceiling(roomLength, roomWidth);</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        for (index = 1; index &lt;= no_of_Rooms; index++) {                     //loop to take input </span>
+
+<span class="nc" id="L41">            System.out.println(&quot; Enter the length of the room&quot; + index);</span>
+<span class="nc" id="L42">            roomLength = input.nextInt();</span>
+
+<span class="nc" id="L44">            System.out.println(&quot; Enter the width of the room&quot; + index);</span>
+<span class="nc" id="L45">            roomWidth = input.nextInt();</span>
+<span class="nc" id="L46">            calculateAreawalls(roomLength, roomWidth, roomHeight);</span>
+<span class="nc" id="L47">            calculateAreaceiling(roomLength, roomWidth);</span>
         }
-        
-<span class="nc" id="L49">        flag = 1;</span>
 
-<span class="nc" id="L51">        System.out.println(&quot; Enter the height of door: &quot;);</span>
-<span class="nc" id="L52">        doorHeight = input.nextInt();</span>
-<span class="nc" id="L53">        System.out.println(&quot; Enter the width of door: &quot;);</span>
-<span class="nc" id="L54">        doorWidth = input.nextInt();</span>
-<span class="nc" id="L55">        calculateAreadoor(doorHeight, doorWidth);             //function call</span>
-<span class="nc" id="L56">        System.out.println(&quot; Enter the height of window: &quot;);</span>
-<span class="nc" id="L57">        windowHeight = input.nextInt();</span>
-<span class="nc" id="L58">        System.out.println(&quot; Enter the width of window: &quot;);</span>
-<span class="nc" id="L59">        windowWidth = input.nextInt();</span>
-        
-        
-<span class="nc" id="L62">        calculateAreawindow(windowHeight, windowWidth);      //function call</span>
-<span class="nc" id="L63">        calculatetotalArea();</span>
-<span class="nc" id="L64">        quantityPaint();</span>
-<span class="nc" id="L65">        costPaint();</span>
-<span class="nc" id="L66">        totalCost();                                         //function call</span>
+<span class="nc" id="L50">        System.out.println(&quot; Enter the height of door: &quot;);</span>
+<span class="nc" id="L51">        doorHeight = input.nextInt();</span>
+<span class="nc" id="L52">        System.out.println(&quot; Enter the width of door: &quot;);</span>
+<span class="nc" id="L53">        doorWidth = input.nextInt();</span>
+<span class="nc" id="L54">        calculateAreadoor(doorHeight, doorWidth);             //function call</span>
+<span class="nc" id="L55">        System.out.println(&quot; Enter the height of window: &quot;);</span>
+<span class="nc" id="L56">        windowHeight = input.nextInt();</span>
+<span class="nc" id="L57">        System.out.println(&quot; Enter the width of window: &quot;);</span>
+<span class="nc" id="L58">        windowWidth = input.nextInt();</span>
 
-<span class="nc" id="L68">        return flag;</span>
+<span class="nc" id="L60">        calculateAreawindow(windowHeight, windowWidth);      //function call</span>
+<span class="nc" id="L61">        calculatetotalArea();</span>
+<span class="nc" id="L62">        quantityPaint();</span>
+<span class="nc" id="L63">        costPaint();</span>
+<span class="nc" id="L64">        totalCost();                                         //function call</span>
+
+<span class="nc" id="L66">        return flag;</span>
     }
 
     public double calculateAreawalls(int roomLength, int roomWidth, int roomHeight) {   //function for calculating area of walls
-            
+
         // considering rectangular rooms 
-        
-<span class="fc" id="L75">        double temp1 = 2 * roomLength * roomHeight;                             // area of 2 longer walls</span>
-<span class="fc" id="L76">        double temp2 = 2 * roomWidth * roomHeight;                              // area of the other 2 shorter walls </span>
-<span class="fc" id="L77">        wallArea = wallArea + temp1 + temp2;</span>
-        
-<span class="fc" id="L79">        return wallArea;                                                  //returns the area of walls</span>
+<span class="fc" id="L72">        double temp1 = 2 * roomLength * roomHeight;                             // area of 2 longer walls</span>
+<span class="fc" id="L73">        double temp2 = 2 * roomWidth * roomHeight;                              // area of the other 2 shorter walls </span>
+<span class="fc" id="L74">        wallArea = wallArea + temp1 + temp2;</span>
+
+<span class="fc" id="L76">        return wallArea;                                                  //returns the area of walls</span>
     }
 
     public double calculateAreaceiling(int roomLength, int roomWidth) {   //function for calculating area of ceiling
 
-<span class="fc" id="L84">        double tempCeiling = roomLength * roomWidth;</span>
-<span class="fc" id="L85">        ceilingArea = ceilingArea + tempCeiling;</span>
-        
-<span class="fc" id="L87">        return ceilingArea;                                                //returns the area of ceiling</span>
+<span class="fc" id="L81">        double tempCeiling = roomLength * roomWidth;</span>
+<span class="fc" id="L82">        ceilingArea = ceilingArea + tempCeiling;</span>
+
+<span class="fc" id="L84">        return ceilingArea;                                                //returns the area of ceiling</span>
     }
 
     public double calculateAreadoor(int doorHeight, int doorWidth) {     //function for calculating area of door
 
-<span class="fc" id="L92">        double tempdoor = no_of_Doors * doorHeight * doorWidth;</span>
-<span class="fc" id="L93">        doorArea = doorArea + tempdoor;</span>
-        
-       // printArea(doorArea);
-<span class="fc" id="L96">        return doorArea;                                                 //returns the area of door</span>
+<span class="fc" id="L89">        double tempdoor = no_of_Doors * doorHeight * doorWidth;</span>
+<span class="fc" id="L90">        doorArea = doorArea + tempdoor;</span>
+
+        // printArea(doorArea);
+<span class="fc" id="L93">        return doorArea;                                                 //returns the area of door</span>
     }
 
     public double calculateAreawindow(int windowHeight, int windowWidth) {     //function for calculating area of window
 
-<span class="fc" id="L101">        double tempwindow = no_of_Windows * windowHeight * windowWidth;</span>
-<span class="fc" id="L102">        windowArea = windowArea + tempwindow;</span>
-        
-<span class="fc" id="L104">        return windowArea;                                                       //returns the area of window</span>
+<span class="fc" id="L98">        double tempwindow = no_of_Windows * windowHeight * windowWidth;</span>
+<span class="fc" id="L99">        windowArea = windowArea + tempwindow;</span>
+
+<span class="fc" id="L101">        return windowArea;                                                       //returns the area of window</span>
     }
 
     public double calculatetotalArea() {        //function for calculating total area
-        
-<span class="nc" id="L109">        totalArea = ( (wallArea + ceilingArea) - (doorArea + windowArea) ) ;</span>
-<span class="nc" id="L110">        printArea(totalArea);</span>
-        
-<span class="nc" id="L112">        return totalArea;</span>
+
+<span class="fc" id="L106">        totalArea = ((wallArea + ceilingArea) - (doorArea + windowArea));</span>
+<span class="fc" id="L107">        printArea(totalArea);</span>
+
+<span class="fc" id="L109">        return totalArea;</span>
 
     }
 
     public double quantityPaint() {
 
-<span class="nc" id="L118">        qtyReqd = totalArea / feet;     //100sqft requires 1litre of paint</span>
-<span class="nc" id="L119">        return qtyReqd ;                //returns the quantity of paint</span>
+<span class="fc" id="L115">        qtyReqd = totalArea / feet;     //100sqft requires 1litre of paint</span>
+<span class="fc" id="L116">        return qtyReqd;                //returns the quantity of paint</span>
 
     }
 
     public double costPaint() {
 
-<span class="nc" id="L125">        costPaint = qtyReqd * cost_of_Paint ;   // assuming 1 litre of paint costs Rs.250</span>
+<span class="fc" id="L122">        costPaint = qtyReqd * cost_of_Paint;   // assuming 1 litre of paint costs Rs.250</span>
         //printCost(costpaint);
-        
-<span class="nc" id="L128">        return costPaint;               //returns the cost of paint</span>
+
+<span class="fc" id="L125">        return costPaint;               //returns the cost of paint</span>
     }
 
     public double totalCost() {         //function for calculating totalcost of painting
 
-<span class="nc" id="L133">        totalCost = costPaint + totalArea * labourCharge ;    </span>
-<span class="nc" id="L134">        printCost(totalCost);</span>
-        
-<span class="nc" id="L136">        return totalCost;                //returns total cost estimated</span>
+<span class="fc" id="L130">        totalCost = costPaint + totalArea * labourCharge;</span>
+<span class="fc" id="L131">        printCost(totalCost);</span>
+
+<span class="fc" id="L133">        return totalCost;                //returns total cost estimated</span>
 
     }
 
     public void printArea(double area) {             //function for printing area
-        
-<span class="nc" id="L142">        System.out.println(&quot; The  Total area is  &quot; + area);</span>
 
-<span class="nc" id="L144">    }</span>
+<span class="fc" id="L139">        System.out.println(&quot; The  Total area is  &quot; + area);</span>
 
-    public void printCost(double cost){                 //function for printing of totalcost
-        
-<span class="nc" id="L148">        System.out.println(&quot; The  Total cost required for painting is &quot; + cost);</span>
-        
+<span class="fc" id="L141">    }</span>
 
-<span class="nc" id="L151">    }</span>
+    public void printCost(double cost) {                 //function for printing of totalcost
+
+<span class="fc" id="L145">        System.out.println(&quot; The  Total cost required for painting is &quot; + cost);</span>
+
+<span class="fc" id="L147">    }</span>
 }
-        </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
