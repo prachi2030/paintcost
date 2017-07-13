@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class miniproject {
     public static void main(String[] args) {
         painting paint=new painting();
-        paint.getInput();
+        paint.getInputWalls();
         //prachi
 }
 }

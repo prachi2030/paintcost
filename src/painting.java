@@ -24,30 +24,95 @@ public class painting {
     
     Scanner input = new Scanner(System.in);
 
-    public int getInput() {                                                  //method to get input from user
+    public int getInputWalls() {                                                  //method to get input from user
         
         System.out.println(" Enter the number of rooms: ");
         no_of_Rooms = input.nextInt();
-        System.out.println(" Enter the number of doors: ");
-        no_of_Doors = input.nextInt();
-        System.out.println(" Enter the number of windows: ");
-        no_of_Windows = input.nextInt();
+        
         System.out.println(" Enter the height of the room");
-        roomHeight = input.nextInt();
+        System.out.println(" Enter 1 for 8ft, \t 2 for 10ft, \t 3 for 12ft, \t or press any key for other ");
+        choice = input.nextInt();
+        
+        switch(choice){
+            case 1: 
+                    roomHeight = 8;
+                    break;
+            case 2: 
+                    roomHeight = 10;
+                    break;
+            case 3: 
+                    roomHeight = 12;
+                    break;
+            default:
+                    System.out.println(" Enter the height of the room");
+                    roomHeight = input.nextInt();
+                    break;
+        }
+        
+        
         
         for (index = 1; index <= no_of_Rooms; index++) {                     //loop to take input 
 
             System.out.println(" Enter the length of the room" + index);
-            roomLength = input.nextInt();
+            System.out.println(" Enter 1 for 8ft, \t 2 for 10ft, \t 3 for 12ft, \t or press any key for other ");
+            choice = input.nextInt();
+        
+            switch(choice){
+                 case 1: 
+                        roomLength = 8;
+                        break;
+                case 2: 
+                        roomLength = 10;
+                        break;
+                 case 3: 
+                        roomLength = 12;
+                    break;
+            default:
+                    System.out.println(" Enter the length of the room");
+                    roomLength = input.nextInt();
+                    break;
+        }
 
             System.out.println(" Enter the width of the room" + index);
-            roomWidth = input.nextInt();
+            System.out.println(" Enter 1 for 8ft, \t 2 for 10ft, \t 3 for 12ft, \t or press any key for other ");
+            choice = input.nextInt();
+        
+            switch(choice){
+                 case 1: 
+                        roomWidth = 8;
+                        break;
+                case 2: 
+                        roomWidth = 10;
+                        break;
+                 case 3: 
+                        roomWidth = 12;
+                    break;
+            default:
+                    System.out.println(" Enter the width of the room");
+                    roomWidth = input.nextInt();
+                    break;
+        }
+            
             calculateAreawalls(roomLength, roomWidth, roomHeight);
             calculateAreaceiling(roomLength, roomWidth);
+            getInputdoors();
         }
         
         flag = 1;
 
+             //function call
+        
+         //TODO
+        return flag;
+    }
+    
+
+    public int getInputdoors(){
+        System.out.println(" Enter the number of doors: ");
+        no_of_Doors = input.nextInt();
+        System.out.println(" Enter the number of windows: ");
+        no_of_Windows = input.nextInt();
+         
         System.out.println(" Enter the height of door: ");
         doorHeight = input.nextInt();
         System.out.println(" Enter the width of door: ");
@@ -63,11 +128,13 @@ public class painting {
         calculatetotalArea();
         quantityPaint();
         costPaint();
-        totalCost();                                         //function call
-
+        totalCost();                                    
+        //TODO flag
         return flag;
     }
-
+    
+    
+    
     public double calculateAreawalls(int roomLength, int roomWidth, int roomHeight) {   //function for calculating area of walls
             
         // considering rectangular rooms 
